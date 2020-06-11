@@ -1,0 +1,95 @@
+---
+title: "Reference"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  echo = FALSE,
+  message = FALSE,
+  warning = FALSE,
+  collapse = TRUE,
+  comment = "#>"
+)
+
+library(dplyr)
+library(pkgdoc)
+
+packages <- paste0("r2dii.", c("data", "match", "analysis"))
+lapply(packages, library, character.only = TRUE)
+
+stopifnot(
+  all_packages_must_be_attached = all(
+    paste0("package:", packages) %in% search()
+  )
+)
+```
+
+```{r, warning=FALSE}
+url_r2dii <- "https://2degreesinvesting.github.io/"
+search_default <- "dataset"
+
+r2dii_reference_concept <- function(x) {
+  custom_table(
+    reference_concept(
+      x, url = url_r2dii, packages = r2dii.utils::r2dii_packages()
+    )
+  )
+}
+r2dii_reference_package <- function(x) {
+  custom_table(
+    reference_package(
+      x, url = url_r2dii, packages = packages
+    )
+  )
+}
+custom_table <- function(x) {
+  x %>% 
+    select(-package, -concept) %>% 
+    unique() %>%
+    knitr::kable(
+      x, 
+      format = "html",
+      col.names = NULL,
+      escape = FALSE
+    ) %>%
+    kableExtra::column_spec(1, bold = TRUE) %>% 
+    kableExtra::column_spec(2, width = "20em")
+}
+```
+
+### Global search
+
+```{r global-search, warning=FALSE}
+packages %>% 
+  purrr::map_dfr(reference_package, url = url_r2dii) %>% 
+  select(-package, -concept) %>% 
+  unique() %>% 
+  purrr::set_names(c("", "object", "description")) %>% 
+  DT::datatable(
+    escape = FALSE,
+    rownames = NULL,
+    options = list(
+      # f: filter, t: table, i: information
+      dom = "fti",
+      search = list(search = search_default)
+    )
+  )
+```
+
+### [Package r2dii.data](https://2degreesinvesting.github.io/r2dii.data)
+
+```{r}
+r2dii_reference_package("r2dii.data")
+```
+
+### [Package r2dii.match](https://2degreesinvesting.github.io/r2dii.match)
+
+```{r}
+r2dii_reference_package("r2dii.match")
+```
+
+### [Package r2dii.analysis](https://2degreesinvesting.github.io/r2dii.analysis)
+
+```{r}
+r2dii_reference_package("r2dii.analysis")
+```

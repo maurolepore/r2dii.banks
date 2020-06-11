@@ -1,0 +1,56 @@
+Package: r2dii.banks
+Title: Easily Install and Load Tools for Banks
+Version: 0.0.0.9000
+Authors@R:
+    c(person(given = "Mauro",
+             family = "Lepore",
+             role = c("aut", "cre"),
+             email = "mauro@2degrees-investing.org",
+             comment = c(ORCID = "0000-0002-1986-7988")),
+      person(given = "Jackson",
+             family = "Hoffart",
+             role = "aut",
+             email = "jackson@2degrees-investing.org",
+             comment = c(ORCID = "0000-0002-8600-5042")),
+      person(given = "Klaus",
+             family = "Hagedorn",
+             role = "aut",
+             email = "klaus@2degrees-investing.org"),
+      person(given = "Daan",
+             family = "Koopman",
+             role = "aut",
+             email = "daan@2degrees-investing.org"),
+      person(given = "Clare",
+             family = "Murray",
+             role = "aut",
+             email = "clare@2degrees-investing.org"),
+      person(given = "Florence",
+             family = "Palandri",
+             role = "aut",
+             email = "florence@2degrees-investing.org"),
+      person(given = "2 Degrees Investing Initiative",
+             role = c("cph", "fnd"),
+             email = "contact@2degrees-investing.org"))
+Description: Install and load r2dii packages for banks.
+License: GPL-3
+URL: https://github.com/2DegreesInvesting/r2dii.banks,
+    https://2degreesinvesting.github.io/r2dii.banks/
+BugReports: 
+    https://github.com/2DegreesInvesting/r2dii.banks/issues
+Depends: 
+    r2dii.analysis,
+    r2dii.data,
+    r2dii.match
+Suggests: 
+    covr,
+    DT,
+    kableExtra,
+    pkgdown,
+    rmarkdown,
+    spelling
+Remotes: 
+    2degreesinvesting/r2dii.analysis
+Encoding: UTF-8
+Language: en-US
+LazyData: true
+RoxygenNote: 7.1.0
