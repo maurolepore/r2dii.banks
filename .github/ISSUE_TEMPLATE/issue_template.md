@@ -1,10 +1,6 @@
 ---
-name: Bug
-about: Report an unexpected problem or unintended behavior
-title: ''
-labels: bug
-assignees: 
-
+name: Bug report or feature request
+about: Describe a bug you've seen or make a case for a new feature
 ---
 
 Please briefly describe your problem and what output you expect. If you have a question, please don't use this form. Instead, ask on <https://stackoverflow.com/>, <https://community.rstudio.com/> or email Mauro Lepore at <mauro@2degrees-investing.org>.
