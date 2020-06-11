@@ -19,23 +19,23 @@ knitr::opts_chunk$set(
 [![CRAN status](https://www.r-pkg.org/badges/version/r2dii.banks)](https://CRAN.R-project.org/package=r2dii.banks)
 <!-- badges: end -->
 
-This is a meta package to easily install and load the tools we build for banks. Run `library(r2dii.banks)` to see the name of the packages in this collection. Learn more about each package at a link of the form `https://2degreesinvesting.github.io/<package name goes here>/` -- for example,  <https://2degreesinvesting.github.io/r2dii.data/>, or <https://2degreesinvesting.github.io/r2dii.match/>.
+r2dii.banks is a collection of R packages that 2DII developed for banks.
 
-## Installation
-
-You can install r2dii.banks from GitHub with:
+Install r2dii.banks with:
 
 ```r
 # install.packages("devtools")
 devtools::install_github("2DegreesInvesting/r2dii.banks")
 ```
 
-[How to minimize installation errors?](https://gist.github.com/maurolepore/a0187be9d40aee95a43f20a85f4caed6#installation)
-
-And you can load it with:
+Then load it with:
 
 ```{r}
 library(r2dii.banks)
 ```
 
-Notice that r2dii.banks automatically loads other r2dii packages for banks.
+To avoid installation errors [upgrade R, RStudio, and R packages](https://happygitwithr.com/install-r-rstudio.html). 
+
+[Search functions and datasets](https://2degreesinvesting.github.io/r2dii.banks/articles/reference.html)
+
+* Need help? First learn how to make a [reprex](https://www.tidyverse.org/help/#reprex) then [share it] with us.
