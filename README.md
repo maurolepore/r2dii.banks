@@ -28,14 +28,13 @@ library(r2dii.banks)
 #> Loading required package: r2dii.match
 ```
 
-Do you want to explore functions and datasets?
-[Search](https://2degreesinvesting.github.io/r2dii.banks/articles/reference.html)
-our reference.
-
-Did you get installation errors? First [upgrade R, RStudio, and R
-packages](https://happygitwithr.com/install-r-rstudio.html) and retry.
-
-Do you still need help? First learn how to make a
-[reprex](https://www.tidyverse.org/help/#reprex) then [share
-it](https://github.com/2DegreesInvesting/r2dii.banks/issues/new/choose)
-with us.
+  - Did you get installation errors? First [upgrade R, RStudio, and R
+    packages](https://happygitwithr.com/install-r-rstudio.html) and
+    retry.
+  - Do you still need help? First learn how to make a
+    [reprex](https://www.tidyverse.org/help/#reprex) then [share
+    it](https://github.com/2DegreesInvesting/r2dii.banks/issues/new/choose)
+    with us.
+  - Do you want to explore functions and datasets?
+    [Search](https://2degreesinvesting.github.io/r2dii.banks/articles/reference.html)
+    our reference.
