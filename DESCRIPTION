@@ -43,8 +43,6 @@ Depends:
     r2dii.match
 Suggests: 
     covr,
-    DT,
-    kableExtra,
     pkgdown,
     rmarkdown,
     spelling

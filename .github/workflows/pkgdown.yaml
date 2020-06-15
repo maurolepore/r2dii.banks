@@ -29,8 +29,11 @@ jobs:
 
       - name: Install dependencies
         run: |
-          install.packages("remotes")
           remotes::install_deps(dependencies = TRUE)
+          install.packages('DT')
+          install.packages('kableExtra')
+          install.packages('purrr')
+          install.packages('dplyr')
           remotes::install_dev("pkgdown")
           remotes::install_github("maurolepore/pkgdoc")
         shell: Rscript {0}
