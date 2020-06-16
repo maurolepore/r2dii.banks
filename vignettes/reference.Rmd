@@ -13,35 +13,36 @@ knitr::opts_chunk$set(
 
 library(dplyr)
 library(pkgdoc)
+```
 
-pkg <- paste0("r2dii.", c("data", "match", "analysis"))
-lapply(pkg, library, character.only = TRUE)
+```{r functions, include=FALSE, warning=FALSE}
+bank_packages <- paste0("r2dii.", c("data", "match", "analysis"))
+lapply(bank_packages, library, character.only = TRUE)
 
 stopifnot(
   all_pkg_must_be_attached = all(
-    paste0("package:", pkg) %in% search()
+    paste0("package:", bank_packages) %in% search()
   )
 )
-```
 
-```{r, warning=FALSE}
-url_r2dii <- "https://2degreesinvesting.github.io/"
-search_default <- "dataset"
+r2dii_url <- "https://2degreesinvesting.github.io/"
 
-r2dii_reference_concept <- function(x) {
+r2dii_reference_concept <- function(x, url = r2dii_url) {
   custom_table(
     reference_concept(
-      x, url = url_r2dii, packages = r2dii.utils::r2dii_packages()
+      x, url = url, packages = r2dii.utils::r2dii_packages()
     )
   )
 }
-r2dii_reference_package <- function(x, packages = pkg) {
+
+r2dii_reference_package <- function(x, packages, url) {
   custom_table(
     reference_package(
-      x, url = url_r2dii, packages = packages
+      x, url = url, packages = packages
     )
   )
 }
+
 custom_table <- function(x) {
   x %>% 
     select(-package, -concept) %>% 
@@ -55,13 +56,22 @@ custom_table <- function(x) {
     kableExtra::column_spec(1, bold = TRUE) %>% 
     kableExtra::column_spec(2, width = "20em")
 }
+
+describe_package <- function(package, url = r2dii_url) {
+  # url has a trailing "/"
+  link <- glue::glue("<a href={url}{package}>{package}</a>")
+  title <- utils::packageDescription(package, fields = "Title")
+  glue::glue("{link}: {title}")
+}
 ```
 
 ### Global search
 
 ```{r global-search, warning=FALSE}
-pkg %>% 
-  purrr::map_dfr(reference_package, url = url_r2dii) %>% 
+search_default <- "dataset"
+
+bank_packages %>% 
+  purrr::map_dfr(reference_package, url = r2dii_url) %>% 
   select(-package, -concept) %>% 
   unique() %>% 
   purrr::set_names(c("", "object", "description")) %>% 
@@ -76,29 +86,21 @@ pkg %>%
   )
 ```
 
-```{r}
-describe_package <- function(package) {
-  link <- glue::glue("<a href={url_r2dii}/{package}>{package}</a>")
-  title <- utils::packageDescription(package, fields = "Title")
-  paste0(link, ": ", title)
-}
+### `r describe_package(bank_packages[[1]])`
+
+```{r package-1}
+r2dii_reference_package(bank_packages[[1]], bank_packages, r2dii_url)
 ```
 
-### `r describe_package(pkg[[1]])`
+### `r describe_package(bank_packages[[2]])`
 
-```{r}
-r2dii_reference_package(pkg[[1]])
+```{r package-2}
+r2dii_reference_package(bank_packages[[2]], bank_packages, r2dii_url)
 ```
 
-### `r describe_package(pkg[[2]])`
+### `r describe_package(bank_packages[[3]])`
 
-```{r}
-r2dii_reference_package(pkg[[2]])
-```
-
-### `r describe_package(pkg[[3]])`
-
-```{r}
-r2dii_reference_package(pkg[[3]])
+```{r package-3}
+r2dii_reference_package(bank_packages[[3]], bank_packages, r2dii_url)
 ```
 
