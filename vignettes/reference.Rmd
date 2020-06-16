@@ -13,18 +13,18 @@ knitr::opts_chunk$set(
 
 library(dplyr)
 library(pkgdoc)
+```
 
-packages <- paste0("r2dii.", c("data", "match", "analysis"))
-lapply(packages, library, character.only = TRUE)
+```{r functions, include=FALSE, warning=FALSE}
+bank_packages <- paste0("r2dii.", c("data", "match", "analysis"))
+lapply(bank_packages, library, character.only = TRUE)
 
 stopifnot(
   all_pkg_must_be_attached = all(
-    paste0("package:", packages) %in% search()
+    paste0("package:", bank_packages) %in% search()
   )
 )
-```
 
-```{r, warning=FALSE}
 r2dii_url <- "https://2degreesinvesting.github.io/"
 
 r2dii_reference_concept <- function(x, url = r2dii_url) {
@@ -70,7 +70,7 @@ describe_package <- function(package, url = r2dii_url) {
 ```{r global-search, warning=FALSE}
 search_default <- "dataset"
 
-packages %>% 
+bank_packages %>% 
   purrr::map_dfr(reference_package, url = r2dii_url) %>% 
   select(-package, -concept) %>% 
   unique() %>% 
@@ -86,21 +86,21 @@ packages %>%
   )
 ```
 
-### `r describe_package(packages[[1]])`
+### `r describe_package(bank_packages[[1]])`
 
-```{r}
-r2dii_reference_package(packages[[1]], packages, r2dii_url)
+```{r package-1}
+r2dii_reference_package(bank_packages[[1]], bank_packages, r2dii_url)
 ```
 
-### `r describe_package(packages[[2]])`
+### `r describe_package(bank_packages[[2]])`
 
-```{r}
-r2dii_reference_package(packages[[2]], packages, r2dii_url)
+```{r package-2}
+r2dii_reference_package(bank_packages[[2]], bank_packages, r2dii_url)
 ```
 
-### `r describe_package(packages[[3]])`
+### `r describe_package(bank_packages[[3]])`
 
-```{r}
-r2dii_reference_package(packages[[3]], packages, r2dii_url)
+```{r package-3}
+r2dii_reference_package(bank_packages[[3]], bank_packages, r2dii_url)
 ```
 
