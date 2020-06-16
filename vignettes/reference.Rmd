@@ -14,12 +14,12 @@ knitr::opts_chunk$set(
 library(dplyr)
 library(pkgdoc)
 
-packages <- paste0("r2dii.", c("data", "match", "analysis"))
-lapply(packages, library, character.only = TRUE)
+pkg <- paste0("r2dii.", c("data", "match", "analysis"))
+lapply(pkg, library, character.only = TRUE)
 
 stopifnot(
-  all_packages_must_be_attached = all(
-    paste0("package:", packages) %in% search()
+  all_pkg_must_be_attached = all(
+    paste0("package:", pkg) %in% search()
   )
 )
 ```
@@ -35,7 +35,7 @@ r2dii_reference_concept <- function(x) {
     )
   )
 }
-r2dii_reference_package <- function(x) {
+r2dii_reference_package <- function(x, packages = pkg) {
   custom_table(
     reference_package(
       x, url = url_r2dii, packages = packages
@@ -60,7 +60,7 @@ custom_table <- function(x) {
 ### Global search
 
 ```{r global-search, warning=FALSE}
-packages %>% 
+pkg %>% 
   purrr::map_dfr(reference_package, url = url_r2dii) %>% 
   select(-package, -concept) %>% 
   unique() %>% 
@@ -76,20 +76,29 @@ packages %>%
   )
 ```
 
-### [Package r2dii.data](https://2degreesinvesting.github.io/r2dii.data)
-
 ```{r}
-r2dii_reference_package("r2dii.data")
+describe_package <- function(package) {
+  link <- glue::glue("<a href={url_r2dii}/{package}>{package}</a>")
+  title <- utils::packageDescription(package, fields = "Title")
+  paste0(link, ": ", title)
+}
 ```
 
-### [Package r2dii.match](https://2degreesinvesting.github.io/r2dii.match)
+### `r describe_package(pkg[[1]])`
 
 ```{r}
-r2dii_reference_package("r2dii.match")
+r2dii_reference_package(pkg[[1]])
 ```
 
-### [Package r2dii.analysis](https://2degreesinvesting.github.io/r2dii.analysis)
+### `r describe_package(pkg[[2]])`
 
 ```{r}
-r2dii_reference_package("r2dii.analysis")
+r2dii_reference_package(pkg[[2]])
 ```
+
+### `r describe_package(pkg[[3]])`
+
+```{r}
+r2dii_reference_package(pkg[[3]])
+```
+
