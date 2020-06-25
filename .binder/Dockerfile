@@ -1,7 +1,7 @@
 FROM rocker/binder:3.6.3
 LABEL maintainer='Mauro Lepore'
 USER root
-COPY . ${HOME}
+RUN echo "To learn what you can do with r2dii.analysis, visit https://2degreesinvesting.github.io/r2dii.analysis/" > README.md
 RUN chown -R ${NB_USER} ${HOME}
 USER ${NB_USER}
 

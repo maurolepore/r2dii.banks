@@ -8,6 +8,8 @@
 [![lifecycle](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
 [![CRAN
 status](https://www.r-pkg.org/badges/version/r2dii.banks)](https://CRAN.R-project.org/package=r2dii.banks)
+[![Launch Rstudio
+Binder](http://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/maurolepore/r2dii.banks/master?urlpath=rstudio)
 <!-- badges: end -->
 
 r2dii.banks is a collection of R packages that 2DII developed for banks.
