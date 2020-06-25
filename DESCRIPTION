@@ -5,7 +5,7 @@ Authors@R:
     c(person(given = "Mauro",
              family = "Lepore",
              role = c("aut", "cre"),
-             email = "mauro@2degrees-investing.org",
+             email = "maurolepore@gmail.com",
              comment = c(ORCID = "0000-0002-1986-7988")),
       person(given = "Jackson",
              family = "Hoffart",
