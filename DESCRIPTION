@@ -1,6 +1,6 @@
 Package: r2dii.banks
 Title: Easily Install and Load '2DII' Packages for Banks
-Version: 0.0.0.9000
+Version: 0.0.1
 Authors@R:
     c(person(given = "Mauro",
              family = "Lepore",
