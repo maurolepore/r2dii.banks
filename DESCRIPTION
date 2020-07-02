@@ -1,5 +1,5 @@
 Package: r2dii.banks
-Title: Easily Install and Load Tools for Banks
+Title: Easily Install and Load '2DII' Packages for Banks
 Version: 0.0.0.9000
 Authors@R:
     c(person(given = "Mauro",
@@ -16,22 +16,16 @@ Authors@R:
              family = "Hagedorn",
              role = "aut",
              email = "klaus@2degrees-investing.org"),
-      person(given = "Daan",
-             family = "Koopman",
-             role = "aut",
-             email = "daan@2degrees-investing.org"),
-      person(given = "Clare",
-             family = "Murray",
-             role = "aut",
-             email = "clare@2degrees-investing.org"),
-      person(given = "Florence",
-             family = "Palandri",
-             role = "aut",
-             email = "florence@2degrees-investing.org"),
       person(given = "2 Degrees Investing Initiative",
              role = c("cph", "fnd"),
              email = "contact@2degrees-investing.org"))
-Description: Install and load r2dii packages for banks.
+Description: The think tank '2DII' (2 Degrees Investing
+    Initiative; <https://2degrees-investing.org/>) maintains a set of
+    packages designed for banks. Together, those packages implement in R a
+    methodology known as 'PACTA' (Paris Agreement Capital Transition
+    Assessment), which enables users to measure the alignment of financial
+    portfolios with climate goals. This package makes it easy to install
+    and load all '2DII' packages for banks in a single step.
 License: GPL-3
 URL: https://github.com/2DegreesInvesting/r2dii.banks,
     https://2degreesinvesting.github.io/r2dii.banks/
@@ -46,9 +40,7 @@ Suggests:
     pkgdown,
     rmarkdown,
     spelling
-Remotes: 
-    2degreesinvesting/r2dii.analysis
 Encoding: UTF-8
 Language: en-US
 LazyData: true
-RoxygenNote: 7.1.0
+RoxygenNote: 7.1.1

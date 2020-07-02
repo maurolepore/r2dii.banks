@@ -5,16 +5,29 @@
 
 <!-- badges: start -->
 
-[![lifecycle](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
 [![CRAN
 status](https://www.r-pkg.org/badges/version/r2dii.banks)](https://CRAN.R-project.org/package=r2dii.banks)
-[![Launch Rstudio
-Binder](http://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/maurolepore/r2dii.banks/master?urlpath=rstudio)
 <!-- badges: end -->
 
-r2dii.banks is a collection of R packages that 2DII developed for banks.
+The think tank ‘2DII’ (2 Degrees Investing Initiative;
+<https://2degrees-investing.org/>) maintains a set of packages designed
+for banks. Together, those packages implement in R a methodology known
+as ‘PACTA’ (Paris Agreement Capital Transition Assessment), which
+enables users to measure the alignment of financial portfolios with
+climate goals. This package makes it easy to install and load all ‘2DII’
+packages for banks in a single step.
 
-Install r2dii.banks with:
+## Installation
+
+Before you install r2dii.banks you may want to:
+
+  - [Try an rstudio.cloud project with this package already
+    installed](https://rstudio.cloud/project/1424833).
+  - [Learn how to minimize installation
+    errors](https://gist.github.com/maurolepore/a0187be9d40aee95a43f20a85f4caed6#installation).
+
+When you are ready, install install the development version of
+r2dii.banks from GitHub with:
 
 ``` r
 # install.packages("devtools")
@@ -30,13 +43,9 @@ library(r2dii.banks)
 #> Loading required package: r2dii.match
 ```
 
-  - Did you get installation errors? First [upgrade R, RStudio, and R
-    packages](https://happygitwithr.com/install-r-rstudio.html) and
-    retry.
-  - Do you still need help? First learn how to make a
-    [reprex](https://www.tidyverse.org/help/#reprex) then [share
-    it](https://github.com/2DegreesInvesting/r2dii.banks/issues/new/choose)
-    with us.
-  - Do you want to explore functions and datasets?
-    [Search](https://2degreesinvesting.github.io/r2dii.banks/articles/reference.html)
-    our reference.
+What would you like to do next?
+
+  - [Search
+    features](https://2degreesinvesting.github.io/r2dii.banks/articles/reference.html).
+  - [Raise an
+    issue](https://2degreesinvesting.github.io/posts/2020-06-26-instructions-to-raise-an-issue/).

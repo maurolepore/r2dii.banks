@@ -10,3 +10,4 @@
 ^vignettes$
 ^vignettes/articles$
 ^\.binder$
+^cran-comments\.md$
