@@ -26,8 +26,8 @@ Before you install r2dii.banks you may want to:
   - [Learn how to minimize installation
     errors](https://gist.github.com/maurolepore/a0187be9d40aee95a43f20a85f4caed6#installation).
 
-When you are ready, install install the development version of
-r2dii.banks from GitHub with:
+When you are ready, install the development version of r2dii.banks from
+GitHub with:
 
 ``` r
 # install.packages("devtools")
